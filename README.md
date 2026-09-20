@@ -1,38 +1,32 @@
-# Flappy OCaml
+# Flappy Bird en OCaml
 
-Ce projet est une implémentation simplifiée de Flappy Bird en OCaml en utilisant un moteur physique rudimentaire.
-
-## Description
-
-Ce programme simule un oiseau (Flappy) qui peut sauter et se déplacer horizontalement. L'objectif est d'éviter des obstacles générés aléatoirement en contrôlant la hauteur de vol de Flappy. Le jeu inclut un sol, un plafond et un système de score basique.
+Implémentation pédagogique d’un jeu inspiré de Flappy Bird, réalisée en OCaml avec un moteur d’affichage et de physique textuel.
 
 ## Fonctionnalités
 
-- **Moteur de jeu** : Le programme utilise une boucle de jeu (`loop`) qui met à jour la physique et l'affichage à chaque itération.
-- **Flappy** : Représenté par un simple symbole `"()"`, il a une largeur définie et est soumis à la gravité.
-- **Sol et plafond** : Définis comme des lignes solides (`#`) qui encadrent la zone de jeu.
-- **Obstacles** : Générés aléatoirement en haut et en bas de l'écran sous forme de tuyaux.
-- **Déplacement** :
-  - Appuyer sur `z` fait sauter Flappy.
-  - Appuyer sur `d` permet un déplacement vers la droite.
-- **Gestion des collisions** : Les obstacles et les limites sont pris en compte dans la mise à jour de l'état du jeu.
+- oiseau soumis à la gravité ;
+- saut contrôlé au clavier ;
+- déplacement horizontal ;
+- génération aléatoire de tuyaux ;
+- collisions avec le sol, le plafond et les obstacles ;
+- système de score ;
+- boucle de mise à jour et rendu textuel.
 
-## Structure du Code
+## Commandes
 
-- **Initialisation**
-  - Définition de `flappy`, du sol, du plafond et du score.
-  - Génération des obstacles de manière aléatoire.
-- **Mécanique du jeu**
-  - `update` : Met à jour la position de Flappy et génère les obstacles si nécessaire.
-  - `affiche` : Gère l'affichage des éléments du jeu.
-- **Utilisation de la physique**
-  - Gravité appliquée sur Flappy.
-  - Détection des collisions.
+- `D` : démarrer ou avancer horizontalement ;
+- `Z` : faire sauter l’oiseau.
 
-## Installation et Exécution
+## Code
 
-Assurez-vous d'avoir OCaml installé sur votre machine.
+Le jeu se trouve dans `flappybird.ml`. Il utilise un module externe nommé `Engine` pour le rendu, les entrées clavier et la physique.
 
-1. Installez OCaml :
-   ```sh
-   sudo apt install ocaml ocaml-findlib
+## État du dépôt
+
+> Le fichier du moteur `Engine` n’est pas présent dans ce dépôt. Le code illustre donc la logique complète du jeu, mais ne peut pas être compilé seul sans le moteur fourni dans le cadre pédagogique d’origine.
+
+Avec le module `Engine` disponible, la compilation peut être effectuée avec l’outil OCaml adapté au projet d’origine.
+
+## Notions abordées
+
+Programmation fonctionnelle, récursivité, listes, état de jeu, boucle événementielle, génération procédurale simple et gestion des collisions.
